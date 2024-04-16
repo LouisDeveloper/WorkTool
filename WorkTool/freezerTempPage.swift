@@ -36,14 +36,15 @@ struct freezerTempPage: View {
                     
                     
                 } label: {
-                    Text("Submit")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(.blue)
-                        .cornerRadius(20)
-                        .padding(.horizontal, 10)
+                    CustomButton(name: "Submit")
+//                    Text("Submit")
+//                        .font(.headline)
+//                        .foregroundColor(.white)
+//                        .frame(maxWidth: .infinity)
+//                        .padding()
+//                        .background(.blue)
+//                        .cornerRadius(20)
+//                        .padding(.horizontal, 10)
                     
                     
                 }
@@ -57,6 +58,7 @@ struct freezerTempPage: View {
                 
                 
             }
+            .padding(.horizontal)
             .toolbar {
                 ToolbarItemGroup(placement: .keyboard) {
                     Spacer()
@@ -75,31 +77,22 @@ struct freezerTempPage: View {
 //        }
 //        .navigationBarBackButtonHidden(true)
     }
-    private func endEditing() {
-        UIApplication.shared.endEditing()
-    }
+//    private func endEditing() {
+//        UIApplication.shared.endEditing()
+//    }
     
     private func copyToPasteboard(string: String) {
             UIPasteboard.general.string = string
     }
 
 }
-extension UINavigationController: UIGestureRecognizerDelegate {
-    override open func viewDidLoad() {
-        super.viewDidLoad()
-        interactivePopGestureRecognizer?.delegate = self
-    }
 
-    public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        return viewControllers.count > 1
-    }
-}
 
-extension UIApplication {
-    func endEditing() {
-        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-    }
-}
+//extension UIApplication {
+//    func endEditing() {
+//        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+//    }
+//}
 
 struct freezerView : View{
     

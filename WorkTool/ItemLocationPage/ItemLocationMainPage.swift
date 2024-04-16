@@ -8,11 +8,30 @@
 import SwiftUI
 
 struct ItemLocationMainPage: View {
+    
+    @Binding var path:NavigationPath
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            navigationBar(pageTitle: "Item Location", isHome: false, path: $path)
+            
+            Spacer()
+            Image(systemName: "timer.circle")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 150, height: 150)
+            
+            Text("Coming soon...")
+                .font(.title)
+            
+            Spacer()
+            
+            
+        }
+        .toolbar(.hidden)
     }
 }
 
 #Preview {
-    ItemLocationMainPage()
+    ItemLocationMainPage(path: .constant(NavigationPath()))
 }

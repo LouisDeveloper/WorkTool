@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct WorkToolApp: App {
@@ -13,5 +14,7 @@ struct WorkToolApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: [Attendance.self])
+        
     }
 }

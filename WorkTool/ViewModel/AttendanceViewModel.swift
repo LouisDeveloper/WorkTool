@@ -6,3 +6,20 @@
 //
 
 import Foundation
+
+class AttendanceViewModel:ObservableObject{
+    
+    @Published var attendanceList:[Attendance] = []
+    
+    init(){
+        getAttendanceList()
+    }
+    
+    public func getAttendanceList(){
+//        attendanceList.append(Attendance(date: Date(), clockInTime: Date(), clockOutTime: Date(), lunchBreak: true))
+//        attendanceList.append(Attendance(date: Date(), clockInTime: Date(), clockOutTime: Date(), lunchBreak: false))
+//        attendanceList.append([Attendance(date: Date(), clockInTime: Date(), clockOutTime: Date(), lunchBreak: true)])
+    }
+
+    
+}

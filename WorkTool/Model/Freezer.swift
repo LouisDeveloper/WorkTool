@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct Freezer : Identifiable{
+    
+    let id:String = UUID().uuidString
+    var name:String
+    var temp:String
+}

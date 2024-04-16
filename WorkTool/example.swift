@@ -8,11 +8,46 @@
 import SwiftUI
 
 struct example: View {
+    //    init() {
+    //        // Customize navigation bar appearance
+    //        let appearance = UINavigationBarAppearance()
+    //        appearance.backgroundColor = .red
+    //        UINavigationBar.appearance().standardAppearance = appearance
+    //        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+    //    }
+    
+    @State private var selectedDate: Date
+    
+    init() {
+        // Initialize the selectedDate with a custom date
+        let components = DateComponents(year: 2024, month: 4, day: 8, hour: 10, minute: 30)
+        _selectedDate = State(initialValue: Calendar.current.date(from: components) ?? Date())
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        DatePicker("Select a date", selection: $selectedDate)
+            .padding()
+    }
+}
+struct DetailView: View {
+    var body: some View {
+        VStack {
+            Text("Detail View")
+        }
+        .navigationBarTitle("Detail")
+        .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button("Share") {
+                            // Handle share action
+                        }
+                    }
+                }
     }
 }
 
-#Preview {
-    example()
+
+struct example_Previews: PreviewProvider {
+    static var previews: some View {
+        example()
+    }
 }
