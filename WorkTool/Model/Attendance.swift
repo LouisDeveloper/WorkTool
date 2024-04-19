@@ -17,6 +17,9 @@ class Attendance: Identifiable{
     public var clockOutTime:Date
     public var lunchBreak:Bool
     
+    @Transient
+    public var isPbOrDayOff:Bool = false
+    
     init(id: String = UUID().uuidString ,date: Date, clockInTime: Date, clockOutTime: Date, lunchBreak: Bool) {
         self.date = date
         self.clockInTime = clockInTime

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF2BB8842BCE7F3A00F57650 /* RequestReportPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2BB8832BCE7F3A00F57650 /* RequestReportPage.swift */; };
 		BF391E372BC3D2980069DAFB /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF391E362BC3D2980069DAFB /* CustomButton.swift */; };
 		BF391E3A2BC3F7460069DAFB /* ItemLocationMainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF391E392BC3F7460069DAFB /* ItemLocationMainPage.swift */; };
 		BF78E40E2BBEA85E005C4459 /* WorkToolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF78E40D2BBEA85E005C4459 /* WorkToolApp.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF2BB8832BCE7F3A00F57650 /* RequestReportPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestReportPage.swift; sourceTree = "<group>"; };
 		BF391E362BC3D2980069DAFB /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		BF391E392BC3F7460069DAFB /* ItemLocationMainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemLocationMainPage.swift; sourceTree = "<group>"; };
 		BF78E40A2BBEA85E005C4459 /* WorkTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +144,7 @@
 				BF78E42F2BBFDCE9005C4459 /* AttendanceMainPage.swift */,
 				BF78E43C2BC28442005C4459 /* ClockInView.swift */,
 				BF78E43E2BC2845B005C4459 /* AttendanceHistoryView.swift */,
+				BF2BB8832BCE7F3A00F57650 /* RequestReportPage.swift */,
 			);
 			path = AttendancePage;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				BF78E4262BBEA9DD005C4459 /* example.swift in Sources */,
 				BF78E4222BBEA996005C4459 /* freezerTempPage.swift in Sources */,
 				BF391E3A2BC3F7460069DAFB /* ItemLocationMainPage.swift in Sources */,
+				BF2BB8842BCE7F3A00F57650 /* RequestReportPage.swift in Sources */,
 				BF78E4242BBEA9C3005C4459 /* navigationBar.swift in Sources */,
 				BF78E4302BBFDCE9005C4459 /* AttendanceMainPage.swift in Sources */,
 				BF90A61B2BC697B200479245 /* DateUtil.swift in Sources */,

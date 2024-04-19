@@ -80,15 +80,26 @@ extension AttendanceHistoryView{
 //            .padding(30)
             
             Spacer()
-            VStack(alignment: .center , spacing: 10) {
-                Text("Lunch Break:")
-                    .foregroundStyle(.gray)
-                    .font(.subheadline)
-                Image(systemName: attendance.lunchBreak ? "checkmark" : "xmark" )
-                    .foregroundStyle(attendance.lunchBreak ? .green : .red)
-                    .fontWeight(.bold)
-//                Spacer()
-                    
+            VStack(alignment:.leading, spacing:20){
+                VStack(alignment: .center , spacing: 10) {
+                    Text("Lunch Break:")
+                        .foregroundStyle(.gray)
+                        .font(.subheadline)
+                    Image(systemName: attendance.lunchBreak ? "checkmark" : "xmark" )
+                        .foregroundStyle(attendance.lunchBreak ? .green : .red)
+                        .fontWeight(.bold)
+    //                Spacer()
+                        
+                }
+                VStack(alignment: .center , spacing: 10) {
+                    Text("Total Hour:")
+                        .foregroundStyle(.gray)
+                        .font(.subheadline)
+                    Text("\(String(format: "%.2f" , calWorkHour(attendance: attendance)) )")
+                        .fontWeight(.bold)
+    //                Spacer()
+                        
+                }
             }
         }
     }
@@ -110,5 +121,18 @@ extension AttendanceHistoryView{
             }
             
         }
+    }
+    
+    private func calWorkHour(attendance:Attendance)->Double{
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.hour,.minute], from: attendance.clockInTime,to:attendance.clockOutTime)
+        
+        var totalHour:Double = Double(components.hour ?? 0 )
+        let minute:Double = Double(components.minute ?? 0) / 60
+        
+        totalHour += minute
+        totalHour = attendance.lunchBreak ? totalHour - 0.5 : totalHour
+//        print(totalHour)
+        return (totalHour * 100 ).rounded() / 100
     }
 }
