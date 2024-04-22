@@ -126,7 +126,6 @@ extension AttendanceHistoryView{
     private func calWorkHour(attendance:Attendance)->Double{
         let calendar = Calendar.current
         let components = calendar.dateComponents([.hour,.minute], from: attendance.clockInTime,to:attendance.clockOutTime)
-        
         var totalHour:Double = Double(components.hour ?? 0 )
         let minute:Double = Double(components.minute ?? 0) / 60
         

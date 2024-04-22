@@ -24,7 +24,8 @@ class FreezerViewModel : ObservableObject{
             Freezer(name: "(4) 牛 -", temp: ""),
             Freezer(name: "(5) 小冷库 -", temp: ""),
             Freezer(name: "(6) 新 1 -", temp: ""),
-            Freezer(name: "(7) 新 2 -", temp: "")
+            Freezer(name: "(7) 新 2 -", temp: ""),
+            Freezer(name: "(8) 新 3 -", temp: "")
         ]
         
     }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct ClockInView: View {
     
@@ -131,24 +132,31 @@ extension ClockInView {
     
     
     private func calculateFinishTime()->Date{
-        let currentDate = Date()
-        var currentDateComp = Calendar.current.dateComponents([.hour,.minute], from: currentDate)
-        let currentMinute = currentDateComp.minute!
+        var date = Date()
+        let calendar = Calendar.current
+        let minute = calendar.component(.minute, from: date)
+//        let second = calendar.component(.second, from: date)
+        let roundingAmount = 5
+        let minutesToAdd = (roundingAmount - minute % roundingAmount) % roundingAmount
+        let modulusMinute = minute % roundingAmount
+//        let secondsToSubtract = second
         
-        var lastM:Int = Int(String(currentMinute).suffix(1)) ?? 0
-        let firstM = currentMinute>=10 ? String(currentMinute).prefix(1) : "0"
-        lastM = (lastM > 2 && lastM < 8) ? 5 : 0
+//        print("(roundingAmount - minute % roundingAmount)=\((roundingAmount - minute % roundingAmount))")
+//        print("minute % roundingAmoint= \(minute % roundingAmount)")
+//        print("minute = \(minute)")
         
-//        print("======")
-//        print(currentMinute)
-//        print("first M=\(firstM)")
-//        print(lastM)
-//        print("======")
-        let fullM:String = "\(firstM)\(lastM)"
-//        print(fullM)
+        var newComponents = DateComponents()
         
-        currentDateComp.minute = Int(fullM)
-        return Calendar.current.date(from: currentDateComp) ?? Date()
+        //minute round by 5 minute , when minute mod roundingAmoiunt (36 % 5 = 1) = 7 * 5 + (1)mod , so only round when the modulus more then 2 , means only round up when near to the next 5 minute
+        if modulusMinute >= 3 {
+            newComponents.minute = minutesToAdd
+        }else{
+            newComponents.minute =  -modulusMinute
+        }
+            
+//        newComponents.second = -secondsToSubtract
+        
+        return calendar.date(byAdding: newComponents, to: date)!
     }
     
     private func submitClockIn(date:Date , clockInTime:Date, clockOutTime:Date, lunchBreak:Bool){
