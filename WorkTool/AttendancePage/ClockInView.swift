@@ -138,7 +138,7 @@ extension ClockInView {
     
     
     private func calculateFinishTime()->Date{
-        var date = Date()
+        let date = Date()
         let calendar = Calendar.current
         let minute = calendar.component(.minute, from: date)
 //        let second = calendar.component(.second, from: date)
