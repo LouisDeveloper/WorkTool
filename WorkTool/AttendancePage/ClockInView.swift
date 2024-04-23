@@ -13,7 +13,7 @@ struct ClockInView: View {
     @Binding var selectedTab:Int
     
     let startDateComponents = DateComponents(hour: 7, minute: 30)
-    @State private var startTime = Date()
+    @State private var startTime:Date = Date()
     @State private var endTime = Date()
     @State private var today:Date = Date()
     @State private var todayTime:Date = Date()
@@ -27,10 +27,16 @@ struct ClockInView: View {
     init(selectedTab:Binding<Int>){
         
         _selectedTab = selectedTab
+        _startTime = State(initialValue: Calendar.current.date(bySettingHour: 7, minute: 30, second: 0, of: Date()) ?? Date())
         
-        _startTime = State(initialValue: Calendar.current.date(from: startDateComponents) ?? Date())
+//        print("start date=\(Date())")
+//        
+//        print("===startTime===")
+//        print("\(startTime.printCurrentDate)")
         
         _endTime = State(initialValue: calculateFinishTime())
+//        print("===endTime===")
+//        print("\(endTime)")
         
     }
         

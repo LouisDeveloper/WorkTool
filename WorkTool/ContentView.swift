@@ -150,3 +150,16 @@ extension UINavigationController: UIGestureRecognizerDelegate {
         return viewControllers.count > 1
     }
 }
+
+extension Date {
+
+    var printCurrentDate : String {
+
+        let dateFormatter = DateFormatter()
+
+        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+
+        return dateFormatter.string(from: self)
+
+    }
+}

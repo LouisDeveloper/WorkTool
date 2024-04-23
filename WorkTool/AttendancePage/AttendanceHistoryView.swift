@@ -129,6 +129,10 @@ extension AttendanceHistoryView{
         var totalHour:Double = Double(components.hour ?? 0 )
         let minute:Double = Double(components.minute ?? 0) / 60
         
+//        print("minute = \(minute)")
+//        print("totalHour =\(totalHour)")
+//        print("clockinTime=\(attendance.clockInTime),clockoutTime=\(attendance.clockOutTime)")
+        
         totalHour += minute
         totalHour = attendance.lunchBreak ? totalHour - 0.5 : totalHour
 //        print(totalHour)
