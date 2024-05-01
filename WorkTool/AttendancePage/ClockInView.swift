@@ -72,9 +72,9 @@ struct ClockInView: View {
                 Spacer()
                 
                 Toggle(isOn: $lunchBreak, label: {
-                    Text("With lunch")
+                    Text("Lunch break")
                 })
-                .frame(width: 150)
+                .frame(width: 180)
 //                .padding(.bottom)
                 
                 Button(action: {
